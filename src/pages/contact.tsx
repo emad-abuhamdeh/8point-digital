@@ -137,13 +137,13 @@ export default function Contact() {
                     </div>
                   </a>
 
-                  <a href="mailto:hello@8pointdigital.ca" className="flex items-start gap-4 group">
+                  <a href="mailto:info@8pointdigital.com" className="flex items-start gap-4 group">
                     <div className="w-11 h-11 rounded-xl bg-[#6CC04A]/15 flex items-center justify-center flex-none group-hover:bg-[#6CC04A]/25 transition-colors">
                       <Mail size={18} className="text-[#6CC04A]" />
                     </div>
                     <div>
                       <div className="text-gray-500 text-xs uppercase tracking-widest font-bold mb-1">Email</div>
-                      <div className="text-white font-semibold group-hover:text-[#6CC04A] transition-colors">hello@8pointdigital.ca</div>
+                      <div className="text-white font-semibold group-hover:text-[#6CC04A] transition-colors">info@8pointdigital.com</div>
                     </div>
                   </a>
 

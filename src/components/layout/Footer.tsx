@@ -66,7 +66,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-[#6CC04A] shrink-0" size={18} />
-                <a href="mailto:hello@8pointdigital.ca" className="text-gray-400 hover:text-[#6CC04A] transition-colors">hello@8pointdigital.ca</a>
+                <a href="mailto:info@8pointdigital.com" className="text-gray-400 hover:text-[#6CC04A] transition-colors">info@8pointdigital.com</a>
               </li>
             </ul>
           </div>
