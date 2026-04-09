@@ -16,21 +16,50 @@ const services = [
   "Not sure yet — let's talk",
 ];
 
+const FORM_ENDPOINT = "https://formsubmit.co/emadabuhamdeh@gmail.com";
+
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [form, setForm] = useState({ name: "", email: "", company: "", budget: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const payload = new URLSearchParams();
+    payload.append("name", form.name);
+    payload.append("email", form.email);
+    payload.append("company", form.company);
+    payload.append("budget", form.budget);
+    payload.append("service", selectedService ?? "Not selected");
+    payload.append("message", form.message);
+    payload.append("_replyto", form.email);
+    payload.append("_subject", "New contact form submission from 8Point Digital");
+    payload.append("_captcha", "false");
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: payload.toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
       toast({ title: "Message received!", description: "We'll be in touch within one business day." });
       setForm({ name: "", email: "", company: "", budget: "", message: "" });
       setSelectedService(null);
-    }, 1600);
+    } catch (error) {
+      toast({ title: "Submission failed", description: "Please try again or email directly at emadabuhamdeh@gmail.com." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
