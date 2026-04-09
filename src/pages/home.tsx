@@ -6,7 +6,7 @@ import { ArrowRight, BarChart3, Globe, Megaphone, Target, CheckCircle2 } from "l
 import { Link } from "wouter";
 
 const AnimatedEight = () => (
-  <div className="relative w-72 h-[28rem] md:w-[26rem] md:h-[38rem] flex items-center justify-center">
+  <div className="relative w-full max-w-[26rem] h-[26rem] sm:h-[30rem] md:h-[38rem] flex items-center justify-center">
     {/* Outer glow ring */}
     <motion.div
       animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.6, 0.3] }}

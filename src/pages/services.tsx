@@ -178,7 +178,7 @@ export default function Services() {
       {/* ── Interactive Service Selector ── */}
       <section className="border-y border-white/10 bg-gray-900/40">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[520px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 lg:min-h-[520px]">
             {/* Sidebar tabs */}
             <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white/10 py-6 lg:py-0">
               <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible py-2 lg:py-8 px-0 lg:px-0">
