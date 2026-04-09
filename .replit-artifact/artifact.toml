@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "8Point Digital Services"
+version = "1.0.0"
+id = "artifacts/8point-digital"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23074
+
+[services.development]
+run = "pnpm --filter @workspace/8point-digital run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/8point-digital", "run", "build" ]
+publicDir = "artifacts/8point-digital/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23074"
+BASE_PATH = "/"
